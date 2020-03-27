@@ -40,11 +40,23 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+- to store information about a client, example--> to persist authentication information across requests
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+- it has features to hash passwords, implements salting both manually and automatically, and accumulative hashing rounds. 
 
 - [ ] What does bcrypt do to slow down attackers?
 
+- a common way attackers circumvent hashing algorithms is by pre-calculating hashes for all possible character combinations up to a particlar length using common hashing techniques. To slow down the hacker's ability to get at a user's password, you can add time to the security algorithm to produce what is known as a key derivation function. Instead of writing your own, you can use the bcryptjs module to do so. Having an algorithm that hashes the information multiple times (rounds) means that an attacker needs to have the hash, known the algoirthm used, and how many rounds were used to generate the hash in the first place.
+
+
 - [ ] What are the three parts of the JSON Web Token?
+
+- the header, the payload, and the signature.
+- the header contains the algorithm with the token type
+- the payload contaims claims(things like permissions) information or any other data you want to store in the token
+- the signature contains a string of a base64 encoded header and payload together, then signed with a secret
 
 ## Minimum Viable Product
 
